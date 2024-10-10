@@ -22,7 +22,7 @@ export const Navigation = ({ pageName }: { pageName: string }) => {
     <nav className="bg-teal-300 p-4">
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 flex items-center justify-between">
         <div className="flex items-center">
-          <Link to="/dashboard" className="text-white text-2xl font-bold">
+          <Link to="/" className="text-white text-2xl font-bold">
             Tada!
           </Link>
         </div>
