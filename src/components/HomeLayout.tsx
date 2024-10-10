@@ -15,7 +15,13 @@ const HomeLayout = () => {
   if (isLoggedIn)
     return <Navigate to="/characters" state={{ from: location }} replace />;
 
-  return <Outlet />;
+  return (
+    <div className="grid place-items-center">
+      <div className="w-3/6 max-md:w-full mt-5">
+        <Outlet />
+      </div>
+    </div>
+  );
 };
 
 export default HomeLayout;

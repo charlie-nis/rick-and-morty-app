@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Navigate, Outlet, useLocation } from "react-router-dom";
 import { AuthContext } from "@/providers/Auth";
 import FullScreenLoader from "@/components/FullScreenLoader";
+import Header from "./Header";
 
 const ProtectedLayout = () => {
   const location = useLocation();
@@ -12,7 +13,19 @@ const ProtectedLayout = () => {
 
   if (isLoading) return <FullScreenLoader />;
 
-  if (isLoggedIn) return <Outlet />;
+  if (isLoggedIn)
+    return (
+      <>
+        <Header />
+        <div className="container mx-auto m-5">
+          <div className="grid grid-cols-1 gap-4">
+            <div className="bg-white p-6 shadow-md mb-5 mt-5 transition duration-500 hover:shadow-xl rounded">
+              <Outlet />
+            </div>
+          </div>
+        </div>
+      </>
+    );
 
   return <Navigate to="/" state={{ from: location }} replace />;
 };

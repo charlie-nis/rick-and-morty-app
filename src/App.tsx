@@ -66,13 +66,11 @@ const authRoutes: RouteObject = {
   children: [
     {
       path: "characters",
-      element: <LoadableCharacters />,
-      children: [
-        {
-          path: ":id",
-          element: <LoadableCharacter />,
-        },
-      ],
+      element: <LoadableCharacters />,      
+    },
+    {
+      path: "characters/:id",
+      element: <LoadableCharacter />,
     },
     {
       path: "location/:id",

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { getAuth } from "firebase/auth";
-import { Navigation } from "../components";
+// import { Navigation } from "../components";
 
 export const Dashboard = () => {
   const auth = getAuth();
@@ -16,7 +16,7 @@ export const Dashboard = () => {
 
   return (
     <>
-      <Navigation pageName="Dashboard" />
+      {/* <Navigation pageName="Dashboard" /> */}
       <div className="container mx-auto m-5">
         <div className="grid grid-cols-1 gap-4">
           <div className="bg-white p-6 shadow-md mb-5 mt-5 transition duration-500 hover:shadow-xl rounded">
