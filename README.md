@@ -61,8 +61,7 @@ or
    Go to the Firebase Console.
    Create a new project and enable the Authentication feature.
    Add a web app to your project and copy the Firebase configuration.
-   In your project, create a .env file in the root directory and add your Firebase configuration:
-   plaintext
+   In your project, create a .env file in the root directory and add your Firebase configuration:   
 
    VITE_BASE_URL="https://rickandmortyapi.com/api"
    VITE_API_KEY=your_api_key
