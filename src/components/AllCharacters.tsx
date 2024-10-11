@@ -34,6 +34,7 @@ const AllCharacters: React.FC<Props> = ({ characterArray }) => {
                 src={char.image}
                 alt={char.name}
                 className="flex rounded-lg  w-full h-full object-cover"
+                loading="lazy"
               />
               <div className="absolute rounded-lg  inset-0 bg-red-500 opacity-0 hover:opacity-35 transition duration-300"></div>
               <div className="absolute left-1/2 transform -translate-x-1/2 bottom-full mb-2 w-max rounded-md bg-red-700 text-white text-sm p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
