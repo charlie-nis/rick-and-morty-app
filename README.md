@@ -51,7 +51,7 @@ Ensure you have the following installed:
    npm install
 ```
 
-or
+   or
 
 ```bash
    yarn install
@@ -61,25 +61,34 @@ or
    Go to the Firebase Console.
    Create a new project and enable the Authentication feature.
    Add a web app to your project and copy the Firebase configuration.
-   In your project, create a .env file in the root directory and add your Firebase configuration:   
+   In your project, create a .env file in the root directory and add your Firebase configuration:
 
+```plaintext
    VITE_BASE_URL="https://rickandmortyapi.com/api"
-   VITE_API_KEY=your_api_key
-   VITE_AUTH_DOMAIN=your_auth_domain
-   VITE_PROJECT_ID=your_project_id
-   VITE_STORAGE_BUCKET=your_storage_bucket
-   VITE_MESSAGE_SENDER_ID=your_message_sender_id
-   VITE_APP_ID=your_app_id
-   VITE_MEASUREMENT_ID=your_measurement_id
 
-5. Run the Development Server
-   Start the development server:
+   VITE_API_KEY=your_api_key
+   
+   VITE_AUTH_DOMAIN=your_auth_domain
+   
+   VITE_PROJECT_ID=your_project_id
+   
+   VITE_STORAGE_BUCKET=your_storage_bucket
+   
+   VITE_MESSAGE_SENDER_ID=your_message_sender_id
+   
+   VITE_APP_ID=your_app_id
+   
+   VITE_MEASUREMENT_ID=your_measurement_id
+```
+   
+
+6. Start the development server:
 
 ```bash
    npm run dev
 ```
 
-or
+   or
 
 ```bash
    yarn dev
@@ -87,11 +96,8 @@ or
 
 6. Open your browser and navigate to http://localhost:5173 to see the application in action!
 
-7. API Reference
-   This project utilizes the Rick and Morty API to fetch character, location, and episode data. Refer to the API documentation for details on available endpoints.
+7. API Reference - This project utilizes the Rick and Morty API to fetch character, location, and episode data. Refer to the API documentation for details on available endpoints.
 
-8. License
-   This project is licensed under the MIT License. See the LICENSE file for details.
-
-9. Acknowledgments
-   Special thanks to the creators of Rick and Morty
+9. License -  This project is licensed under the MIT License. See the LICENSE file for details.
+   
+11. Acknowledgments -  Special thanks to the creators of Rick and Morty
