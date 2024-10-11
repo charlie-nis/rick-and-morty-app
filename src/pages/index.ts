@@ -1,9 +1,7 @@
-export { default as App } from "./App";
-export { default as Dashboard } from "./Dashboard";
-export { default as Character } from "./Character";
-export { default as Characters } from "./Characters";
-export { default as Episode } from "./Episode";
-export { default as Location } from "./Location";
-export { default as SignUp } from "./SignUp";
-export { default as SignIn } from "./SignIn";
-export { default as NotFound } from "./NotFound";
+export { default as Character } from "./character";
+export { default as Characters } from "./characters";
+export { default as Episode } from "./episode";
+export { default as Location } from "./location";
+export { default as SignUp } from "./sign-up";
+export { default as SignIn } from "./sign-in";
+export { default as NotFound } from "./not-found";

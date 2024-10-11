@@ -1,7 +1,6 @@
 import { Suspense, lazy } from "react";
 import { type RouteObject } from "react-router-dom";
 import { FullScreenLoader, ProtectedLayout, HomeLayout } from "@/components";
-import "./App.css";
 
 const Loadable =
   (Component: React.FunctionComponent) => (props: JSX.IntrinsicAttributes) =>
@@ -11,13 +10,13 @@ const Loadable =
       </Suspense>
     );
 
-const LoadableCharacters = Loadable(lazy(() => import("@/pages/Characters")));
-const LoadableCharacter = Loadable(lazy(() => import("@/pages/Character")));
-const LoadableEpisode = Loadable(lazy(() => import("@/pages/Episode")));
-const LoadableLocation = Loadable(lazy(() => import("@/pages/Location")));
-const LoadableSignUp = Loadable(lazy(() => import("@/pages/SignUp")));
-const LoadableSignIn = Loadable(lazy(() => import("@/pages/SignIn")));
-const LoadableNotFound = Loadable(lazy(() => import("@/pages/NotFound")));
+const LoadableCharacters = Loadable(lazy(() => import("@/pages/characters")));
+const LoadableCharacter = Loadable(lazy(() => import("@/pages/character")));
+const LoadableEpisode = Loadable(lazy(() => import("@/pages/episode")));
+const LoadableLocation = Loadable(lazy(() => import("@/pages/location")));
+const LoadableSignUp = Loadable(lazy(() => import("@/pages/sign-up")));
+const LoadableSignIn = Loadable(lazy(() => import("@/pages/sign-in")));
+const LoadableNotFound = Loadable(lazy(() => import("@/pages/not-found")));
 
 const nonAuthRoutes: RouteObject = {
   path: "*",

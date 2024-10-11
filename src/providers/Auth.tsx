@@ -5,26 +5,29 @@ import {
   createContext,
   ReactNode,
 } from "react";
+import FireBaseApp from "@/firebase";
+
+import { getAuth, signOut as signOutFirebase } from "firebase/auth";
 
 import { type TUserStorage, tokenStorage, userStorage } from "@/utils/storage";
 
-type State = {
+type TState = {
   token: string | null;
   isLoading?: boolean;
 };
 
-type Action = {
+type TAction = {
   type: string;
   token: string | null;
 };
 
-const initialState: State = {
+const initialState: TState = {
   token: null,
   isLoading: true,
 };
 
-type AuthContextProviderProps = { children: ReactNode };
-type AuthContextValue = {
+type TAuthContextProviderProps = { children: ReactNode };
+type TAuthContextValue = {
   auth: ({
     token,
     user,
@@ -33,12 +36,12 @@ type AuthContextValue = {
     user: TUserStorage;
   }) => Promise<void>;
   signOut: () => Promise<void>;
-  currentState: State;
+  currentState: TState;
 };
 
-const AuthContext = createContext<AuthContextValue | undefined>(undefined);
+const AuthContext = createContext<TAuthContextValue | undefined>(undefined);
 
-const stateReducer = (state: State, action: Action) => {
+const stateReducer = (state: TState, action: TAction) => {
   switch (action.type) {
     case "RESTORE_USER_DATA":
       return {
@@ -63,8 +66,9 @@ const stateReducer = (state: State, action: Action) => {
   }
 };
 
-const AuthProvider = ({ children }: AuthContextProviderProps) => {
+const AuthProvider = ({ children }: TAuthContextProviderProps) => {
   const [state, dispatch] = useReducer(stateReducer, initialState);
+  const authFirebase = getAuth(FireBaseApp);
 
   useEffect(() => {
     let token = null;
@@ -96,7 +100,7 @@ const AuthProvider = ({ children }: AuthContextProviderProps) => {
         } catch (e) {
           return;
         }
-
+        await signOutFirebase(authFirebase);
         dispatch({ type: "SIGN_OUT", token: null });
       },
       currentState: state,

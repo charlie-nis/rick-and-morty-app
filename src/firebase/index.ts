@@ -12,6 +12,4 @@ const firebaseConfig = {
 
 const FireBaseApp = initializeApp(firebaseConfig);
 
-console.log(firebaseConfig.apiKey)
-
 export default FireBaseApp;

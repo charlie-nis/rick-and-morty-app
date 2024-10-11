@@ -17,9 +17,9 @@ const ProtectedLayout = () => {
     return (
       <>
         <Header />
-        <div className="container mx-auto m-5">
+        <div className="container mx-auto m-5 ">
           <div className="grid grid-cols-1 gap-4">
-            <div className="bg-white p-6 shadow-md mb-5 mt-5 transition duration-500 hover:shadow-xl rounded">
+            <div className=" p-6  mb-5 mt-5 transition duration-500  rounded">
               <Outlet />
             </div>
           </div>

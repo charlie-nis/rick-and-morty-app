@@ -14,10 +14,19 @@ const fetchCharacters = async ({
     page: pageParam.toString(),
     ...filters,
   });
-  const { data } = await axios.get<TCharacterResponse>(
-    `${baseUrl}/character?${params}`
-  );
-  return data;
+
+  try {
+    const { data } = await axios.get<TCharacterResponse>(
+      `${baseUrl}/character?${params}`
+    );
+    return data;
+  } catch (error: any) {
+    if (error.response?.status === 404) {
+      throw new Error("No characters found with the given search criteria.");
+    } else {
+      throw error;
+    }
+  }
 };
 
 export const useInfiniteCharacters = (filters: Record<string, string> = {}) => {

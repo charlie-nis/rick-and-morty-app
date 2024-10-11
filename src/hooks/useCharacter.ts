@@ -8,10 +8,19 @@ const fetchCharacterById = async ({
 }: {
   id: number | number[] | undefined;
 }) => {
-  const { data } = await axios.get<TCharacter | TCharacter[]>(
-    `${baseUrl}/character/${id?.toString()}`
-  );
-  return data;
+  try {
+    const { data } = await axios.get<TCharacter | TCharacter[]>(
+      `${baseUrl}/character/${id?.toString()}`
+    );
+
+    return data;
+  } catch (error: any) {
+    if (error.response?.status === 404) {
+      throw new Error("No character found with the given ID.");
+    } else {
+      throw error;
+    }
+  }
 };
 
 export const useCharacter = ({ id }: { id: number | number[] | undefined }) => {
