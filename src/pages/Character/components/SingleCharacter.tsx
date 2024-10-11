@@ -28,6 +28,7 @@ const SingleCharacter: React.FC<TProps> = ({ character }) => {
             src={character.image}
             alt={character.name}
             className="w-full h-96 md:w-96 md:h-96 rounded-t-lg md:rounded-l-lg object-cover"
+            loading="lazy"
           />
           <div className="p-4 flex flex-col text-sm gap-y-4 md:pl-7 md:py-5">
             <div className="gap-y-1">
