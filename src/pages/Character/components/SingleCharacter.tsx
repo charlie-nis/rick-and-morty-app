@@ -27,7 +27,7 @@ const SingleCharacter: React.FC<TProps> = ({ character }) => {
           <img
             src={character.image}
             alt={character.name}
-            className="w-full h-96 md:w-96 md:h-96 rounded-t-lg md:rounded-l-lg object-cover"
+            className="w-full h-96 md:w-96 md:h-96 rounded-t-lg md:rounded-l-lg md:rounded-tr-none object-cover"
             loading="lazy"
           />
           <div className="p-4 flex flex-col text-sm gap-y-4 md:pl-7 md:py-5">
@@ -64,7 +64,9 @@ const SingleCharacter: React.FC<TProps> = ({ character }) => {
                 </div>
               ) : (
                 <Link
-                  to={`/location/${character?.location?.url.split("/").pop() || ""}`}
+                  to={`/location/${
+                    character?.location?.url.split("/").pop() || ""
+                  }`}
                   className="text-zinc-200 text-lg hover:opacity-75"
                 >
                   {character?.location?.name}
@@ -80,7 +82,9 @@ const SingleCharacter: React.FC<TProps> = ({ character }) => {
                 </div>
               ) : (
                 <Link
-                  to={`/location/${character?.origin?.url.split("/").pop() || ""}`}
+                  to={`/location/${
+                    character?.origin?.url.split("/").pop() || ""
+                  }`}
                   className="text-zinc-200 text-lg"
                 >
                   {character?.origin?.name}

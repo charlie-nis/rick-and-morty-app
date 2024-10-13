@@ -16,8 +16,10 @@ const CharacterItem: React.FC<TProps> = ({ character }) => {
         <img
           src={character.image}
           alt={character.name}
-          className="w-full h-52 md:w-52 md:h-52 rounded-t-lg md:rounded-l-lg object-cover"
+          className="w-full h-82 md:w-52 md:h-52 rounded-t-lg md:rounded-l-lg md:rounded-tr-none object-cover"
+          loading="lazy"
         />
+
         <div className="px-4 py-5 flex flex-col text-sm gap-y-4 flex-grow">
           <div className="gap-y-1">
             <div className="text-lg md:text-xl font-bold">{character.name}</div>
